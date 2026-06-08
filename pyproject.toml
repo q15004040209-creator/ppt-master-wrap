@@ -1,0 +1,67 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ppt-master-wrapper"
+version = "1.0.0"
+description = "Python wrapper for PPT Master - AI generates editable PowerPoint from natural language prompts"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Wrapper Contributors", email = "q15004040209@example.com"}
+]
+keywords = ["ppt", "powerpoint", "ai", "presentation", "automation", "python"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: End Users/Desktop",
+    "Topic :: Office/Business :: Presentation",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: OS Independent",
+    "Natural Language :: Chinese",
+    "Natural Language :: English",
+]
+requires-python = ">=3.8"
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "black>=23.0",
+    "flake8>=6.0",
+    "mypy>=1.0",
+]
+all = [
+    "openai>=1.0",
+    "anthropic>=0.20",
+    "google-generativeai>=0.5",
+]
+
+[project.scripts]
+ppt-master-wrap = "ppt_master_wrapper.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/q15004040209-creator/ppt-master-wrap"
+Documentation = "https://github.com/hugohe3/ppt-master"
+Repository = "https://github.com/q15004040209-creator/ppt-master-wrap"
+Issues = "https://github.com/q15004040209-creator/ppt-master-wrap/issues"
+
+[tool.setuptools]
+packages = ["ppt_master_wrapper"]
+
+[tool.black]
+line-length = 100
+target-version = ["py38", "py39", "py310", "py311", "py312"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
